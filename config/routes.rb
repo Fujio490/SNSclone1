@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  get '/voices', to 'voices#index'
+  get '/voices', to: 'voices#index'
 end
