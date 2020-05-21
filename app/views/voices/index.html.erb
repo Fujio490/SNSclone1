@@ -6,7 +6,7 @@
   </tr>
 <% @voices.each do |voice| %>
   <tr>
-    <td><%= blog.content %></td>
+    <td><%= voice.content %></td>
     <td><%= link_to '詳細を確認する', voice_path(voice.id) %></td>
     <td><%= link_to "発言を修正する", edit_voice_path(voice.id) %></td>
     <td><%= link_to '発言を削除する', voice_path(voice.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
