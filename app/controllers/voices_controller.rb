@@ -1,7 +1,7 @@
 class VoicesController < ApplicationController
     before_action :set_voice, only: [:show, :edit, :update, :destroy]
     def index
-        @voice = Voice.all
+        @voices = Voice.all
     end
     def new
         @voice = Voice.new
