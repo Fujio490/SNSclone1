@@ -7,12 +7,16 @@ class VoicesController < ApplicationController
         @voice = Voice.new
     end
     def create
-        @voice = Voice.new
-        if params[:back]
-            render :new
+        @voice = Voice.new(voice_params)
+    if params[:back]
+        render :new
+    else
+        if @voice.save
+            redirect_to voices_path, notice: "発言しました"
         else
             render :new
         end
+    end
     end
     def edit
         
