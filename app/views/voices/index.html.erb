@@ -1,0 +1,16 @@
+<h1>発言一覧</h1>
+<p><%= notice %></p>
+<table>
+  <tr>
+    <th>発言</th>
+  </tr>
+<% @voices.each do |voice| %>
+  <tr>
+    <td><%= blog.content %></td>
+    <td><%= link_to '詳細を確認する', voice_path(voice.id) %></td>
+    <td><%= link_to "発言を修正する", edit_voice_path(voice.id) %></td>
+    <td><%= link_to '発言を削除する', voice_path(voice.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to '新しく発言する', new_voice_path %>
