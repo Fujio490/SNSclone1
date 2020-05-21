@@ -34,6 +34,7 @@ class VoicesController < ApplicationController
     def confirm
         @voice = Voice.new(voice_params)
         render :new if @voice.invalid?
+    end
     private
     def voice_params
         params.require(:voice).permit(:content)
